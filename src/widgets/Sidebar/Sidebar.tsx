@@ -1,6 +1,8 @@
 import { Building2 } from 'lucide-react';
 
 import SidebarNavigation from './SidebarNavigation';
+import SidebarUserProfile from './SidebarUserProfile';
+import { SignOutButton } from '@/features/auth/sign-out/ui';
 
 export default function Sidebar() {
   return (
@@ -17,8 +19,11 @@ export default function Sidebar() {
             </p>
           </div>
         </div>
-
         <SidebarNavigation />
+        <div className="border-t border-sidebar-border p-4">
+          <SidebarUserProfile />
+          <SignOutButton />
+        </div>
       </div>
     </aside>
   );

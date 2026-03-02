@@ -12,7 +12,7 @@ import {
 } from '@/features/auth/sign-in/schema';
 import { nativeSignInAction } from '@/features/auth/sign-in/actions';
 import { useAppConfigStore } from '@/shared/stores';
-import { useAuthStore } from '@/entities/auth/schema/stores/useAuthStore';
+import { useAuthStore } from '@/entities/auth/stores/useAuthStore';
 import {
   Form,
   FormControl,

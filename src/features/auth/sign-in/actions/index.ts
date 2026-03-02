@@ -12,7 +12,7 @@ export const nativeSignInAction = async (body: SignInRequestDto) =>
   clientResponseWithResult(async () => {
     const response = await apiPost<
       ApiSuccessDtoWithResult<SignInAndRefreshResponseDtoForServer>
-    >('/auth/sign-in/native', body);
+    >('/auth/sign-in', body);
 
     if (!response?.result) {
       throw new ApiError('ISE', '서버에서 응답이 없습니다.');

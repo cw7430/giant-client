@@ -1,6 +1,9 @@
 import { redirect } from 'next/navigation';
 import { cookies } from 'next/headers';
 
+import { Sidebar } from '@/widgets/Sidebar';
+import { Header } from '@/widgets/Header';
+
 export default async function HomeLayout({
   children,
 }: Readonly<{
@@ -14,7 +17,9 @@ export default async function HomeLayout({
 
   return (
     <div className="min-h-screen bg-background">
+      <Sidebar />
       <div className="pl-64">
+        <Header />
         <main className="p-6">{children}</main>
       </div>
     </div>

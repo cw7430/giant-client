@@ -108,11 +108,7 @@ export default function SignInForm() {
             <FormItem>
               <FormLabel htmlFor="userName">아이디</FormLabel>
               <FormControl>
-                <Input
-                  {...field}
-                  id="userName"
-                  placeholder="아이디"
-                />
+                <Input {...field} id="userName" placeholder="아이디" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -156,6 +152,11 @@ export default function SignInForm() {
             </FormItem>
           )}
         />
+        {errors.root && (
+          <div className="bg-destructive/15 p-3 rounded-md flex items-center gap-x-2 text-sm text-destructive animate-in fade-in zoom-in duration-200">
+            <span className="font-medium">{errors.root.message}</span>
+          </div>
+        )}
         <Button
           type="submit"
           className="w-full gradient-primary text-primary-foreground"

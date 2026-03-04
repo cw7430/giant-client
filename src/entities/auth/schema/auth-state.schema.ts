@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { signInAndRefreshResponseSchemaForClient } from '@/features/auth/shared/schema';
+import { signInAndRefreshResponseSchemaForClient, type SignInAndRefreshResponseDtoForClient } from '@/features/auth/shared/schema';
 
 export const authStateDataSchema = signInAndRefreshResponseSchemaForClient
   .partial()
@@ -23,14 +23,7 @@ export type AuthState = AuthStateData & {
   setHasHydrated: (v: boolean) => void;
 
   signIn: (
-    accessTokenExpiresAtMs: number,
-    employeeCode: string,
-    employeeName: string,
-    accountRole: string,
-    employeeRole: string,
-    department: string,
-    team: string,
-    position: string,
+   data: SignInAndRefreshResponseDtoForClient
   ) => void;
 
   checkAuth: () => boolean;

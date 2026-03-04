@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
 import type { AuthStateData, AuthState } from '@/entities/auth/schema';
+import type { SignInAndRefreshResponseDtoForClient } from '@/features/auth/shared/schema';
 
 const initialState = {
   accessTokenExpiresAtMs: null,
@@ -48,26 +49,7 @@ export const useAuthStore = create<AuthState>()(
 
       setHasHydrated: (v: boolean) => set({ hasHydrated: v }),
 
-      signIn: (
-        accessTokenExpiresAtMs: number,
-        employeeCode: string,
-        employeeName: string,
-        accountRole: string,
-        employeeRole: string,
-        department: string,
-        team: string,
-        position: string,
-      ) =>
-        set({
-          accessTokenExpiresAtMs,
-          employeeCode,
-          employeeName,
-          accountRole,
-          employeeRole,
-          department,
-          team,
-          position,
-        }),
+      signIn: (data: SignInAndRefreshResponseDtoForClient) => set(data),
 
       checkAuth: () => validateAuthIntegrity(get()),
 

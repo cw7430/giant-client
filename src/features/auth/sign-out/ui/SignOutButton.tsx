@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { LogOut } from 'lucide-react';
 
-import { useAuthStore } from '@/entities/auth/stores/useAuthStore';
+import { useAuthStore } from '@/entities/auth/stores';
 import { Button } from '@/shared/ui/button';
 import { signOutAction } from '@/features/auth/sign-out/actions';
 

@@ -12,7 +12,7 @@ import {
 } from '@/features/auth/sign-in/schema';
 import { nativeSignInAction } from '@/features/auth/sign-in/actions';
 import { useAppConfigStore } from '@/shared/stores';
-import { useAuthStore } from '@/entities/auth/stores/useAuthStore';
+import { useAuthStore } from '@/entities/auth/stores';
 import {
   Form,
   FormControl,
@@ -80,16 +80,7 @@ export default function SignInForm() {
 
     const responseData = response.result;
 
-    signIn(
-      responseData.accessTokenExpiresAtMs,
-      responseData.employeeCode,
-      responseData.employeeName,
-      responseData.accountRole,
-      responseData.employeeRole,
-      responseData.department,
-      responseData.team,
-      responseData.position,
-    );
+    signIn(responseData);
 
     router.replace('/');
   };

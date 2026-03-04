@@ -3,6 +3,7 @@ import { cookies } from 'next/headers';
 
 import { Sidebar } from '@/widgets/Sidebar';
 import { Header } from '@/widgets/Header';
+import { AuthInitializer } from '@/features/auth/refresh/ui';
 
 export default async function HomeLayout({
   children,
@@ -16,12 +17,15 @@ export default async function HomeLayout({
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <Sidebar />
-      <div className="pl-64">
-        <Header />
-        <main className="p-6">{children}</main>
+    <>
+      <AuthInitializer />
+      <div className="min-h-screen bg-background">
+        <Sidebar />
+        <div className="pl-64">
+          <Header />
+          <main className="p-6">{children}</main>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

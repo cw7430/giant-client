@@ -1,6 +1,6 @@
 'use client';
 
-import { useAuthStore } from '@/entities/auth/stores/useAuthStore';
+import { useAuthStore } from '@/entities/auth/stores';
 
 export default function SidebarUserProfile() {
   const { employeeRole, employeeName } = useAuthStore.getState();

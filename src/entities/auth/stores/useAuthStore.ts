@@ -49,7 +49,17 @@ export const useAuthStore = create<AuthState>()(
 
       setHasHydrated: (v: boolean) => set({ hasHydrated: v }),
 
-      signIn: (data: SignInAndRefreshResponseDtoForClient) => set(data),
+      signIn: (data: SignInAndRefreshResponseDtoForClient) =>
+        set({
+          accessTokenExpiresAtMs: data.accessTokenExpiresAtMs,
+          employeeCode: data.employeeCode,
+          employeeName: data.employeeName,
+          accountRole: data.accountRole,
+          employeeRole: data.employeeRole,
+          department: data.department,
+          team: data.team,
+          position: data.position,
+        }),
 
       checkAuth: () => validateAuthIntegrity(get()),
 

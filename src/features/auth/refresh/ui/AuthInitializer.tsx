@@ -34,7 +34,7 @@ export default function AuthInitializer() {
         if (response.code !== 'SU') {
           signOut();
           toast('세션이 만료되었습니다.');
-          router.replace('/auth');
+          router.replace('/sign-in');
           return null;
         }
 

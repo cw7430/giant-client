@@ -23,7 +23,7 @@ export default async function HomeLayout({
         <Sidebar />
         <div className="pl-64">
           <Header />
-          <main className="p-6">{children}</main>
+          <section className="p-6">{children}</section>
         </div>
       </div>
     </>

@@ -3,7 +3,7 @@ import { z } from 'zod';
 export const employeeProfileResponseSchema = z.object({
   employeeId: z.string(),
   employeeCode: z.string(),
-  employeeRole: z.string(),
+  employeeRole: z.enum(['DEPARTMENT_CHIEF', 'TEAM_CHIEF', 'EMPLOYEE', 'LEFT']),
   employeeName: z.string(),
   positionCode: z.string(),
   positionName: z.string(),

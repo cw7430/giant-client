@@ -10,7 +10,7 @@ export const getEmployeeProfiles = async (param: EmployeeProfilesRequestDto) =>
   clientResponseWithResult(async () => {
     const response = await apiGet<
       ApiSuccessDtoWithResult<EmployeeProfilesResponseDto>
-    >('/auth/refresh', param, { authType: 'access' });
+    >('/hr/profiles', param, { authType: 'access' });
 
     if (!response?.result) {
       throw new ApiError('ISE', '서버에서 응답이 없습니다.');

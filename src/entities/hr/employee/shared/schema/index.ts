@@ -1,9 +1,9 @@
 import { z } from 'zod';
 
 export const employeeProfileResponseSchema = z.object({
-  employeeId: z.number(),
+  employeeId: z.string(),
   employeeCode: z.string(),
-  employeeRole: z.string(),
+  employeeRole: z.enum(['DEPARTMENT_CHIEF', 'TEAM_CHIEF', 'EMPLOYEE', 'LEFT']),
   employeeName: z.string(),
   positionCode: z.string(),
   positionName: z.string(),
@@ -13,9 +13,9 @@ export const employeeProfileResponseSchema = z.object({
   teamName: z.string(),
   phoneNumber: z.string(),
   email: z.string(),
-  createdBy: z.number().nullable(),
+  createdBy: z.string().nullable(),
   createdEmployeeName: z.string().nullable(),
-  updatedBy: z.number().nullable(),
+  updatedBy: z.string().nullable(),
   updatedEmployeeName: z.string().nullable(),
   createdAt: z.date(),
   updatedAt: z.date(),
